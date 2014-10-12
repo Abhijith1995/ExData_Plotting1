@@ -21,17 +21,17 @@ constructPlot <- function()
   
   
   #Creating a new column which combines the Day and the Time columns 
-  finalData$fDayTime <- strptime(paste(finalData$Date, finalData$Time, sep = ' '), format = "%d/%m/%Y %H:%M:%S")
+  finalData$dayTime <- strptime(paste(finalData$Date, finalData$Time, sep = ' '), format = "%d/%m/%Y %H:%M:%S")
   
   
 
   
   
   #Generating a plot
-  plot(finalData$fDayTime, finalData$Sub_metering_1, type = "n", xlab="", ylab = "Energy sub metering")
-  lines(finalData$fDayTime, finalData$Sub_metering_1)
-  lines(finalData$fDayTime, finalData$Sub_metering_2, col = "red")
-  lines(finalData$fDayTime, finalData$Sub_metering_3, col = "blue")
+  plot(finalData$dayTime, finalData$Sub_metering_1, type = "n", xlab="", ylab = "Energy sub metering")
+  lines(finalData$dayTime, finalData$Sub_metering_1)
+  lines(finalData$dayTime, finalData$Sub_metering_2, col = "red")
+  lines(finalData$dayTime, finalData$Sub_metering_3, col = "blue")
   
   legend("topright", legend = c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), col = c("black", "red", "blue"), lty=c(1,1))
   
